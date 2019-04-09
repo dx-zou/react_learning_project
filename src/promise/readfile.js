@@ -7,7 +7,6 @@ function readfile(file,callback) {
     callback(null,data)
   })
 }
-
 readfile('./components/input.jsx',(err,data) => {
   console.log(data);
   console.log(err);
