@@ -6,6 +6,7 @@ import './views/class-extends/class'
 import './views/class-extends/class-extend'
 import User from './views/User/User'
 import Comment from './views/Comment/Comment'
+import InputBox from './components/Input'
 const dog = {
   name: '大黄',
   age: 3,
@@ -27,6 +28,7 @@ class App extends Component {
           <p>2.使用class类继承创建组件</p>
           <User {...dog}></User>
           <Comment></Comment>
+          <InputBox></InputBox>
         </div>
       </div>
     );
