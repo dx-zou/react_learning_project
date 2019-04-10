@@ -11,7 +11,7 @@ function readFileByPromise(file) {
 }
 
 async function getResult() {
-  const res1 = await readFileByPromise('./readfile.js')
+  const res1 = await readFileByPromise('./readfie.js')
   console.log(res1);
   const res2 = await readFileByPromise('./readByPromise.js')
   console.log(res2);
