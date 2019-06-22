@@ -2,9 +2,9 @@ import React from "react";
 //创建一个无状态的组件
 export default function Item(props) {
   return (
-    <div>
-      <h2 className="title">评论人：{props.name}</h2>
+    <li>
+      <span className="title">评论人：{props.name}</span>
       <p>{props.content}</p>
-    </div>
+    </li>
   );
 }

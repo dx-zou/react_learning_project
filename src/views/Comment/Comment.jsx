@@ -19,13 +19,18 @@ export default class CommentLsit extends React.Component {
     return (
       <div className="Comment-container">
         {/* <button onClick={() => {this.show();this.handleClick()}}>点击</button> */}
-        <Button onClick={this.handleClick.bind(this)}>点击</Button>
-        <Button onClick={this.show}>按钮</Button>
-        <h1 className="title">评论组件</h1>
+        <Button onClick={this.handleClick.bind(this)} type="primary">
+          点击
+        </Button>
+        <Button onClick={this.show} type="primary">
+          按钮
+        </Button>
         <h3>{this.state.msg}</h3>
-        {this.state.list.map(item => (
-          <Item {...item} key={item.id} />
-        ))}
+        <ul>
+          {this.state.list.map(item => (
+            <Item {...item} key={item.id} />
+          ))}
+        </ul>
       </div>
     );
   }

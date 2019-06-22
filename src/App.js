@@ -5,15 +5,17 @@ import "./views/class-extends/class";
 import "./views/class-extends/class-extend";
 import Comment from "./views/Comment/Comment";
 import InputBox from "./components/MyInput";
+import Clock from "./components/Clock";
 import { HashRouter, Route, Link, Redirect } from "react-router-dom";
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <HashRouter>
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1>This is my first React project</h1>
+            <h1>Learning React</h1>
+            <Clock />
           </header>
           <div className="Content">
             <div className="content-header">
@@ -30,5 +32,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;
