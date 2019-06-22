@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Home from './views/Home/Home'
-import './views/class-extends/class'
-import './views/class-extends/class-extend'
-import User from './views/User/User'
-import Comment from './views/Comment/Comment'
-import InputBox from './components/Input'
-import About from './components/About'
-import {HashRouter,Route,Link,Redirect} from 'react-router-dom'
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.scss";
+import "./views/class-extends/class";
+import "./views/class-extends/class-extend";
+import Comment from "./views/Comment/Comment";
+import InputBox from "./components/MyInput";
+import { HashRouter, Route, Link, Redirect } from "react-router-dom";
 class App extends Component {
   render() {
     return (
@@ -19,13 +16,14 @@ class App extends Component {
             <h1>This is my first React project</h1>
           </header>
           <div className="Content">
-            <Link to="/">首页</Link>
-            ----
-            <Link to="/about/250">about</Link>
-            <Route exact path="/" render={() => <Redirect to="/about"></Redirect>}></Route>
-            <Route exact path="/about/:id" component={About}></Route>
-            <Route exact path="/about" component={About}></Route>
-            <Comment></Comment>
+            <div className="content-header">
+              <Link to="/">首页--</Link>
+              <Link to="/inputBox">输入框--</Link>
+              <Link to="/comment">评论--</Link>
+            </div>
+            <Route exact path="/" render={() => <Redirect to="/inputBox" />} />
+            <Route exact path="/comment" component={Comment} />
+            <Route exact path="/inputBox" component={InputBox} />
           </div>
         </div>
       </HashRouter>
