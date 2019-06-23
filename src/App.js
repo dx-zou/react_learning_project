@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.scss";
+import "./styles/App.scss";
 import "./views/class-extends/class";
 import "./views/class-extends/class-extend";
 import Comment from "./views/Comment/Comment";

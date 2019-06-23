@@ -1,7 +1,6 @@
 import React from "react";
 import Item from "./Item";
 import { Button } from "antd";
-import "../css/Comment.scss";
 //创建一个有状态的组件
 export default class CommentLsit extends React.Component {
   constructor() {

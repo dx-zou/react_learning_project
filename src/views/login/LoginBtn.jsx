@@ -11,7 +11,7 @@ export default class LoginBtn extends React.Component {
   render() {
     let value = this.props.isLoggedIn ? "退出" : "登录";
     return (
-      <Button onClick={this.changeStatus} className="Login-btn">
+      <Button type="primary" onClick={this.changeStatus} className="Login-btn">
         {value}
       </Button>
     );

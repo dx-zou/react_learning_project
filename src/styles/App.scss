@@ -1,10 +1,26 @@
 @import '~antd/dist/antd.css';
+@import "./Comment.scss";
 
 h1,
 h2,
 h3,
 h4 {
   color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .App {
@@ -17,29 +33,38 @@ h4 {
   color: #fff;
   background-color: #282c34;
 
-  .App-logo {
-    height: 20vmin;
-    pointer-events: none;
-  }
-
-  .logo-rotate {
-    animation: App-logo-spin infinite 30s linear;
-  }
-
   .App-sidebar {
-    width: 200px;
-    padding-left: 10px;
+    width: 220px;
+    padding: 0 10px;
+    border-right: 1px solid #61dafb;
     text-align: center;
     font-size: calc(10px + 1vmin);
+
+    .App-logo {
+      height: 20vmin;
+      pointer-events: none;
+    }
+
+    .logo-rotate {
+      animation: App-logo-spin infinite 30s linear;
+    }
   }
 
   .App-main {
-    width: calc(100% - 230px);
+    width: calc(100% - 220px);
+    padding: 0 20px;
 
     .App-header {
       display: flex;
       justify-content: space-between;
+      width: 100%;
       line-height: 50px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #61dafb;
+
+      .Login-btn {
+        margin-left: 10px;
+      }
     }
   }
 
@@ -57,22 +82,4 @@ h4 {
     color: #61dafb;
   }
 
-  .Login-btn {
-    margin-left: 10px;
-  }
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
 }
