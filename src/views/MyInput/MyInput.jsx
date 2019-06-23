@@ -1,5 +1,6 @@
 import React from "react";
 import { Input, Button, message } from "antd";
+import Item from "./item";
 export default class MyInput extends React.Component {
   constructor() {
     super();
@@ -68,15 +69,10 @@ export default class MyInput extends React.Component {
           添加
         </Button>
         <h2>{this.state.msg}</h2>
-        <ul className="list-box">
-          {this.state.list.map((item, index) => {
-            return (
-              <li key={index + item} onClick={() => this.removeItem(index)}>
-                {item}
-              </li>
-            );
-          })}
-        </ul>
+        <Item
+          list={this.state.list}
+          onRemoveItem={this.removeItem.bind(this)}
+        />
       </div>
     );
   }
