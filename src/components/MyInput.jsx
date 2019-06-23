@@ -34,7 +34,7 @@ export default class MyInput extends React.Component {
         </Button>
         {this.state.list.map((item, index) => {
           return (
-            <ul>
+            <ul className="list-box">
               <li key={index + item} onClick={() => this.removeItem(index)}>
                 {item}
               </li>

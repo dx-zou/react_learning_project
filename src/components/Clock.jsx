@@ -27,7 +27,7 @@ export default class Clock extends Component {
       <div>
         <h1>Keep going !</h1>
         <h2>
-          It is {moment(this.state.date).format("MMMM Do YYYY, h:mm:ss a")}.
+          It is {moment(this.state.date).format("MMMM Do YYYY, h:mm:ss a")}
         </h2>
       </div>
     );

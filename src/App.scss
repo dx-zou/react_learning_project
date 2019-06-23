@@ -1,39 +1,46 @@
 @import '~antd/dist/antd.css';
 
+h1,
+h2,
+h3,
+h4 {
+  color: #fff;
+}
+
 .App {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-size: calc(16px + 1vmin);
   color: #fff;
   background-color: #282c34;
-  min-height: 100vh;
-
-  h1,
-  h2,
-  h3,
-  h4 {
-    color: #fff;
-  }
 
   .App-logo {
-    animation: App-logo-spin infinite 30s linear;
     height: 20vmin;
     pointer-events: none;
   }
 
+  .logo-rotate {
+    animation: App-logo-spin infinite 30s linear;
+  }
 
-  .App-header {
-    position: absolute;
+  .App-sidebar {
     width: 200px;
+    padding-left: 10px;
     text-align: center;
     font-size: calc(10px + 1vmin);
   }
 
-  .Content {
-    margin-left: 300px;
+  .App-main {
+    width: calc(100% - 230px);
 
-    .content-header {
+    .App-header {
+      display: flex;
+      justify-content: space-between;
       line-height: 50px;
     }
-
   }
 
   .App-link {
@@ -44,6 +51,15 @@
     margin-left: 20px;
   }
 
+  .list-box {
+    margin-left: 2vw;
+    margin-top: 2vh;
+    color: #61dafb;
+  }
+
+  .Login-btn {
+    margin-left: 10px;
+  }
 }
 
 a {

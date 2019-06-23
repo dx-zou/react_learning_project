@@ -25,7 +25,6 @@ export default class CommentLsit extends React.Component {
         <Button onClick={this.show} type="primary">
           按钮
         </Button>
-        <h3>{this.state.msg}</h3>
         <ul>
           {this.state.list.map(item => (
             <Item {...item} key={item.id} />
