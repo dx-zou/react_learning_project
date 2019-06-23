@@ -45,7 +45,6 @@ export default class MyInput extends React.Component {
   componentDidMount() {
     this.inputRef.current.focus();
   }
-
   render() {
     return (
       <div className="Input-container">

@@ -6,7 +6,8 @@ export default function HeaderLink() {
     <div className="Header-link">
       <Link to="/">首页--</Link>
       <Link to="/input-box">输入框--</Link>
-      <Link to="/comment">评论--</Link>
+      <Link to="/my-form">表单--</Link>
+      <Link to="/dialog">Dialog--</Link>
     </div>
   );
 }
