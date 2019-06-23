@@ -16,11 +16,12 @@ export default class Toggle extends Component {
   render() {
     let logoClass = this.state.isOn ? "App-logo logo-rotate" : "App-logo";
     return (
-      <div>
+      <div className="Logo-container">
         <img src={logo} className={logoClass} alt="logo" />
         <Button type="primary" onClick={this.handleToggle}>
           {this.state.isOn ? "OFF" : "ON"}
         </Button>
+        <h1>Learning React</h1>
       </div>
     );
   }
