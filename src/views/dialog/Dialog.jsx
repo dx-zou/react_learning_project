@@ -1,14 +1,16 @@
-import React, { Component } from "react";
-import FancyBorder from "./FancyBorder";
+import React, { Component, Suspense } from "react";
 import { Button } from "antd";
+const FancyBorder = React.lazy(() => import("./FancyBorder"));
 export default class Dialog extends Component {
   render() {
     return (
       <div className="Dialog-container">
-        <FancyBorder>
-          <p>确定删除吗？</p>
-          <Button type="primary">确定</Button>
-        </FancyBorder>
+        <Suspense fallback={<div>loading...</div>}>
+          <FancyBorder>
+            <p>确定删除吗？</p>
+            <Button type="primary">确定</Button>
+          </FancyBorder>
+        </Suspense>
       </div>
     );
   }
