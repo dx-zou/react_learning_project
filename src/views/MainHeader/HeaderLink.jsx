@@ -8,6 +8,7 @@ export default function HeaderLink() {
       <Link to="/input-box">输入框--</Link>
       <Link to="/my-form">表单--</Link>
       <Link to="/dialog">Dialog--</Link>
+      <Link to="/context">Dialog--</Link>
     </div>
   );
 }
