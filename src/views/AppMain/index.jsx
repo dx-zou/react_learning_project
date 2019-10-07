@@ -1,5 +1,5 @@
 import React from "react";
-import AppRouter from "../../route";
+import AppRouter from "../../route/index";
 import MainHeader from "../MainHeader";
 export default function AppMain() {
   return (
