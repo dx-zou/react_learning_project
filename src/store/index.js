@@ -1,8 +1,13 @@
-import { createStore } from "redux";
-import reducer from "./reducer";
-const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+import { configureStore } from '@reduxjs/toolkit';
+import { useDispatch, useSelector } from 'react-redux';
+import rootReducer from './reducers';
+
+const store = configureStore({
+	reducer: rootReducer,
+});
+
+export const useAppDispatch = () => useDispatch();
+
+export const useAppState = selector => useSelector(selector);
 
 export default store;
