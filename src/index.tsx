@@ -8,7 +8,7 @@ import './styles/App.less';
 
 ReactDOM.render(
 	<Provider store={store}>
-		<App />,
+		<App />
 	</Provider>,
 	document.getElementById('root')
 );

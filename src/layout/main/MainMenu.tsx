@@ -1,32 +1,28 @@
 /**
  * 系统菜单组件
  */
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Menu } from 'antd';
 import { useNavigate } from 'react-router';
 const { Item } = Menu;
 const list = [
 	{
 		path: '/dashboard',
-		name: '首页',
+		name: 'CSS',
 	},
 	{
 		path: '/todos',
-		name: '代办任务',
-	},
-	{
-		path: '/dir-manage',
-		name: '目录管理',
+		name: 'Todo',
 	},
 ];
-export default function AppMenu() {
+const MainMenu = () => {
 	const navigate = useNavigate();
-	const handleMenuClick = key => {
+	const handleMenuClick = (key: any): void => {
 		navigate(key);
 	};
 	useEffect(() => {});
 	return (
-		<Menu theme='dark' mode='horizontal' defaultSelectedKeys={['dashboard']}>
+		<Menu theme='light' mode='horizontal' defaultSelectedKeys={['/dashboard']}>
 			{list.map(m => (
 				<Item key={m.path} onClick={({ key }) => handleMenuClick(key)}>
 					{m.name}
@@ -34,4 +30,5 @@ export default function AppMenu() {
 			))}
 		</Menu>
 	);
-}
+};
+export default MainMenu;

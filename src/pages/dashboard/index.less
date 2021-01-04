@@ -1,0 +1,81 @@
+.hidden-btn {
+  visibility: hidden;
+}
+
+.hello {
+  &::after {
+    content: attr(class);
+  }
+  &::before {
+    content: attr(data-name);
+  }
+}
+.attr-hover {
+  &:hover::after {
+    content: attr(class);
+  }
+}
+.strip-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  li {
+    --time: calc(var(--line-index) * 200ms);
+    width: 3px;
+    height: 30px;
+    border-radius: 3px;
+    background: #f66;
+    list-style: none;
+    animation: loading 1.5s ease-in-out var(--time) infinite;
+    &+li {
+      margin-left: 5px;
+    }
+  }
+}
+@keyframes loading {
+  0%,100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.5);
+  }
+}
+
+.track-btn {
+  overflow: hidden;
+  position: relative;
+  border-radius: 25px;
+  width: 400px;
+  height: 50px;
+  background-color: #66f;
+  cursor: pointer;
+  line-height: 50px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #fff;
+
+  span {
+    position: relative;
+    pointer-events: none;
+  }
+
+  &::before {
+    --size: 0;
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background-image: radial-gradient(circle closest-side, #09f, transparent);
+    content: "";
+    transform: translate3d(-50%, -50%, 0);
+    transition: width 200ms ease, height 200ms ease;
+  }
+
+  &:hover::before {
+    --size: 400px;
+  }
+}

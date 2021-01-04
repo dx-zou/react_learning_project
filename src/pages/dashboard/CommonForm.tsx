@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import {
 	Modal,
 	Form,
@@ -22,12 +22,21 @@ const layout = {
 		span: 21,
 	},
 };
+
+interface Props {
+	visible: boolean;
+	onCancel: Function;
+	onOk: Function;
+}
 const formData = { names: [''], list: [{ first: '', last: '' }] };
-export default function CommonForm(props) {
+const CommonForm: FC<Props> = props => {
 	const { visible, onCancel, onOk } = props;
 	const [form] = Form.useForm();
 	const [title] = useState('新增');
 	const [initialValues] = useState(formData);
+	useEffect(() => {
+		console.log('加载了。。。。。。。');
+	});
 	// 保存表单
 	const handleSaveForm = async () => {
 		try {
@@ -258,4 +267,6 @@ export default function CommonForm(props) {
 			</Form>
 		</Modal>
 	);
-}
+};
+
+export default CommonForm;

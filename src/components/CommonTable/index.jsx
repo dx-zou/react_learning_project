@@ -190,4 +190,4 @@ const Index = forwardRef((props, ref) => {
 	);
 });
 
-export default Index;
+export default React.memo(Index);

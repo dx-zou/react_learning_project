@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+/**
+ * @description 登录验证路由
+ */
+import React, { useState, FC } from 'react';
 import { Route, useNavigate } from 'react-router-dom';
 import { Result, Button } from 'antd';
-// import { useLocale } from 'locales';
-import { useLocation } from 'react-router';
+import { useLocation, RouteProps } from 'react-router';
 // import { useAppState } from '../store';
 
-const PrivateRoute = props => {
+const PermissionRoute: FC<RouteProps> = props => {
 	// const { logged } = useAppState(state => state.user);
 	const [logged] = useState(true);
 	const navigate = useNavigate();
-	// const { formatMessage } = useLocale();
 	const location = useLocation();
 
 	return logged ? (
@@ -22,10 +23,12 @@ const PrivateRoute = props => {
 			extra={
 				<Button
 					type='primary'
-					onClick={navigate('/login', {
-						replace: true,
-						state: { from: location.pathname },
-					})}
+					onClick={() =>
+						navigate('/login', {
+							replace: true,
+							state: { from: location.pathname },
+						})
+					}
 				>
 					请登录
 				</Button>
@@ -34,4 +37,4 @@ const PrivateRoute = props => {
 	);
 };
 
-export default PrivateRoute;
+export default PermissionRoute;

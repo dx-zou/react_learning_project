@@ -1,5 +1,5 @@
-
-
+/* 系统主题颜色 */
+@theme-color: #e3501f;
 /* 系统头部样式 */
 .main-header {
   position: fixed;
@@ -8,6 +8,19 @@
   padding: 0 20px;
   z-index: 1;
 }
+/* 重置antd 样式 */
+.ant-layout-header {
+  background: @theme-color;
+  color: #fff;
+}
 .ant-layout-content {
   background-color: #fff;
+}
+.ant-menu.ant-menu-horizontal {
+  background: @theme-color;
+  border: none;
+  color: #fff;
+}
+.ant-menu-item-selected {
+  border-color: @theme-color;
 }

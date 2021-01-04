@@ -1808,7 +1808,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/hoist-non-react-statics@^3.3.1":
+"@types/hoist-non-react-statics@^3.3.0", "@types/hoist-non-react-statics@^3.3.1":
   version "3.3.1"
   resolved "https://registry.npm.taobao.org/@types/hoist-non-react-statics/download/@types/hoist-non-react-statics-3.3.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fhoist-non-react-statics%2Fdownload%2F%40types%2Fhoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"
   integrity sha1-ESSq/lEYy1kZd66xzqrtEHDrA58=
@@ -1919,6 +1919,16 @@
   integrity sha1-s7aR65VsSzQBd37me5AMsoQV2Vo=
   dependencies:
     "@types/react" "*"
+
+"@types/react-redux@^7.1.14":
+  version "7.1.14"
+  resolved "https://registry.npm.taobao.org/@types/react-redux/download/@types/react-redux-7.1.14.tgz#694609eb906ffc2da4b01f0a1e4f27c1937ac33a"
+  integrity sha1-aUYJ65Bv/C2ksB8KHk8nwZN6wzo=
+  dependencies:
+    "@types/hoist-non-react-statics" "^3.3.0"
+    "@types/react" "*"
+    hoist-non-react-statics "^3.3.0"
+    redux "^4.0.0"
 
 "@types/react@*", "@types/react@^17.0.0":
   version "17.0.0"
@@ -2103,11 +2113,6 @@
   dependencies:
     "@typescript-eslint/types" "4.8.2"
     eslint-visitor-keys "^2.0.0"
-
-"@ungap/url-search-params@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.npm.taobao.org/@ungap/url-search-params/download/@ungap/url-search-params-0.1.4.tgz#727e9b4c811beaa6be6d7e4cc0516663c884cfd0"
-  integrity sha1-cn6bTIEb6qa+bX5MwFFmY8iEz9A=
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
@@ -9870,15 +9875,6 @@ react-router-dom@^6.0.0-beta.0:
     prop-types "^15.7.2"
     react-router "6.0.0-beta.0"
 
-react-router-native@^6.0.0-beta.0:
-  version "6.0.0-beta.0"
-  resolved "https://registry.npm.taobao.org/react-router-native/download/react-router-native-6.0.0-beta.0.tgz#5ab33c06077e06da927c3505f6de91ed1f8d9a1d"
-  integrity sha1-WrM8Bgd+BtqSfDUF9t6R7R+Nmh0=
-  dependencies:
-    "@ungap/url-search-params" "^0.1.4"
-    prop-types "^15.7.2"
-    react-router "6.0.0-beta.0"
-
 react-router@6.0.0-beta.0:
   version "6.0.0-beta.0"
   resolved "https://registry.npm.taobao.org/react-router/download/react-router-6.0.0-beta.0.tgz#3e11f39b6ded4412c2fed9e4f989dd4c8156724d"
@@ -10054,7 +10050,7 @@ redux-thunk@^2.3.0:
   resolved "https://registry.npm.taobao.org/redux-thunk/download/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
   integrity sha1-UcLBmhhe1Rh6qpotCLZm0NZGdiI=
 
-redux@^4.0.0, redux@^4.0.5:
+redux@^4.0.0:
   version "4.0.5"
   resolved "https://registry.npm.taobao.org/redux/download/redux-4.0.5.tgz#4db5de5816e17891de8a80c424232d06f051d93f"
   integrity sha1-TbXeWBbheJHeioDEJCMtBvBR2T8=

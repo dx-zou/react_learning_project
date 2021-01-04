@@ -187,14 +187,6 @@ const Index: FC<Props> = forwardRef((props, ref) => {
 			<Col span={20}>
 				{children && children}
 				<div ref={tableRef} className='common-table-container'>
-					<div className='common-table-toolbar'>
-						<Space>{renderActionBar && renderActionBar.map(a => a)}</Space>
-						<Space style={{ fontSize: '19px' }}>
-							<FileTextTwoTone />
-							<span>{tableTitle}</span>
-						</Space>
-					</div>
-					<Divider style={{ margin: '10px 0' }} />
 					{showSearch && (
 						<Form
 							colon={false}
@@ -235,6 +227,14 @@ const Index: FC<Props> = forwardRef((props, ref) => {
 							</Item>
 						</Form>
 					)}
+					<Divider style={{ margin: '10px 0' }} />
+					<div className='common-table-toolbar'>
+						<Space>{renderActionBar && renderActionBar.map(a => a)}</Space>
+						<Space style={{ fontSize: '19px' }}>
+							<FileTextTwoTone />
+							<span>{tableTitle}</span>
+						</Space>
+					</div>
 					<Table
 						columns={columns}
 						dataSource={tableData}
@@ -249,4 +249,4 @@ const Index: FC<Props> = forwardRef((props, ref) => {
 	);
 });
 
-export default Index;
+export default React.memo(Index);
