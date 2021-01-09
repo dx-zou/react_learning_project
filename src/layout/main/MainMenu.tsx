@@ -17,6 +17,7 @@ const list = [
 ];
 const MainMenu = () => {
 	const navigate = useNavigate();
+
 	const handleMenuClick = (key: any): void => {
 		navigate(key);
 	};

@@ -9,10 +9,12 @@ const Todos = lazy(
 const routerList = [
 	{
 		path: 'dashboard',
+		title: 'css',
 		element: <SwitchRoute element={<Dashboard />} titleId='title.dashboard' />,
 	},
 	{
 		path: 'todos',
+		title: 'todos',
 		element: <SwitchRoute element={<Todos />} titleId='title.dashboard' />,
 	},
 ];

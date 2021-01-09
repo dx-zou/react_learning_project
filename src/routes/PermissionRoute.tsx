@@ -12,7 +12,6 @@ const PermissionRoute: FC<RouteProps> = props => {
 	const [logged] = useState(true);
 	const navigate = useNavigate();
 	const location = useLocation();
-
 	return logged ? (
 		<Route {...props} />
 	) : (
