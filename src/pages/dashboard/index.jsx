@@ -1,5 +1,5 @@
 import './index.less';
-import './test';
+import '@/utils/test';
 
 const list = [1, 2, 3, 4, 5, 6];
 
@@ -17,9 +17,9 @@ const Index = () => {
           Do You Want To Know More About CSS Development Skill
         </div>
       </div>
-      <div className='linear-gradient'/>
+      <div className='linear-gradient' />
       <h1 className='gradient-text'>Full Stack Developer</h1>
-      <div className='grid-bg'/>
+      <div className='grid-bg' />
     </div>
   );
 };
