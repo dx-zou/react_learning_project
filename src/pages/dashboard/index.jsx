@@ -20,6 +20,7 @@ const Index = () => {
       <div className='linear-gradient' />
       <h1 className='gradient-text'>Full Stack Developer</h1>
       <div className='grid-bg' />
+      <div className='dashed-border' />
     </div>
   );
 };

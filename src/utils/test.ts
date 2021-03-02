@@ -71,3 +71,5 @@ function typeGuard(arg: number | string) {
   return arg++;
 }
 console.log(123);
+
+class Point {}

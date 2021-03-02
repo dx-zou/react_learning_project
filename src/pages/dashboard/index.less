@@ -148,3 +148,29 @@
   background-image: linear-gradient(0deg, #fff 5%,transparent 5%,transparent), linear-gradient(to right, #fff 5%, transparent 5%, transparent);
   background-size: 20px 20px;
 }
+
+.dashed-border  {
+  width: 300px;
+  height: 60px;
+  margin-top: 50px;
+  background: linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+  linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+  linear-gradient(0deg, #333 50%, transparent 0) repeat-y,
+  linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
+  background-size: 6px 3px,
+  6px 3px,
+  3px 6px,
+  3px 6px;
+  background-position: 0 0,
+  0 100%,
+  0 0,
+  100% 0;
+  &:hover {
+    animation: linearGradientMove 1s infinite linear;
+  }
+}
+@keyframes linearGradientMove {
+  100% {
+    background-position: 4px 0, -4px 100%, 0 -4px, 100% 4px;
+  }
+}

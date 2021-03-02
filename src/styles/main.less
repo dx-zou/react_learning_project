@@ -2,18 +2,27 @@
 @theme-color: #e3501f;
 /* 系统头部样式 */
 .main-header {
-  position: fixed;
+  // position: fixed;
   display: flex;
   width: 100%;
   padding: 0 20px;
   z-index: 1;
+  background: #fff;
+}
+.logo-container {
+  line-height: 60px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
 }
 /* 重置antd 样式 */
 .ant-layout-header {
-  background: @theme-color;
+  // background: @theme-color;
   color: #fff;
 }
 .ant-layout-content {
+  height: calc(100vh - 65px);
+  overflow-y: auto;
   background-color: #fff;
 }
 .ant-menu.ant-menu-horizontal {
