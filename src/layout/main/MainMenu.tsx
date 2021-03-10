@@ -6,8 +6,9 @@ import { Menu, Layout } from 'antd';
 import { useNavigate } from 'react-router';
 import {
   MailOutlined,
-  AppstoreOutlined,
+  BarChartOutlined,
   SettingOutlined,
+  PieChartOutlined,
 } from '@ant-design/icons';
 
 const { Sider } = Layout;
@@ -19,9 +20,14 @@ const list = [
     icon: <MailOutlined />,
   },
   {
-    path: '/todos',
-    name: '图表',
-    icon: <AppstoreOutlined />,
+    path: '/echarts',
+    name: 'ECharts',
+    icon: <BarChartOutlined />,
+  },
+  {
+    path: '/g2plot',
+    name: 'G2Plot',
+    icon: <PieChartOutlined />,
   },
   {
     path: '/drag',

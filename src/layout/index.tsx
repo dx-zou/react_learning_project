@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Outlet, useLocation, useNavigate } from 'react-router';
 import { Layout } from 'antd';
 import SuspenseFallbackLoading from './SuspenseFallbackLoading';
