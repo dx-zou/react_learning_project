@@ -13,6 +13,9 @@ const G2Plot = lazy(
 const Drag = lazy(
   () => import(/* webpackChunkName: "Echarts'"*/ '../pages/drag/index')
 );
+const Canvas = lazy(
+  () => import(/* webpackChunkName: "Echarts'"*/ '../pages/canvas/index')
+);
 const routerList = [
   {
     path: '/dashboard',
@@ -39,6 +42,11 @@ const routerList = [
     path: '/drag',
     title: 'drag',
     element: <SwitchRoute title='drag' element={<Drag />} />,
+  },
+  {
+    path: '/canvas',
+    title: 'canvas',
+    element: <SwitchRoute title='canvas' element={<Canvas />} />,
   },
 ];
 

@@ -9,10 +9,11 @@ import {
   BarChartOutlined,
   SettingOutlined,
   PieChartOutlined,
+  AreaChartOutlined,
 } from '@ant-design/icons';
 
 const { Sider } = Layout;
-const { Item } = Menu;
+const { Item, SubMenu } = Menu;
 const list = [
   {
     path: '/dashboard',
@@ -20,13 +21,25 @@ const list = [
     icon: <MailOutlined />,
   },
   {
-    path: '/echarts',
-    name: 'ECharts',
-    icon: <BarChartOutlined />,
+    path: '/charts',
+    name: '图表',
+    icon: <AreaChartOutlined />,
+    children: [
+      {
+        path: '/g2plot',
+        name: 'G2Plot',
+        icon: <PieChartOutlined />,
+      },
+      {
+        path: '/echarts',
+        name: 'ECharts',
+        icon: <BarChartOutlined />,
+      },
+    ],
   },
   {
-    path: '/g2plot',
-    name: 'G2Plot',
+    path: '/canvas',
+    name: 'canvas',
     icon: <PieChartOutlined />,
   },
   {
@@ -59,20 +72,37 @@ const MainMenu = () => {
       <div className='logo-container'>前端火星</div>
       <Menu
         theme='dark'
-        mode='vertical'
+        mode='inline'
         defaultSelectedKeys={['/dashboard']}
         selectedKeys={selectedKeys}
         style={{ height: 'calc(100vh - 109px)', overflowY: 'auto' }}
       >
-        {list.map(m => (
-          <Item
-            key={m.path}
-            icon={m.icon}
-            onClick={({ key }) => handleMenuClick(key)}
-          >
-            {m.name}
-          </Item>
-        ))}
+        {list.map(m => {
+          if (m.children) {
+            return (
+              <SubMenu key={m.name} icon={m.icon} title={m.name}>
+                {m.children.map(i => (
+                  <Item
+                    key={i.path}
+                    icon={i.icon}
+                    onClick={({ key }) => handleMenuClick(key)}
+                  >
+                    {i.name}
+                  </Item>
+                ))}
+              </SubMenu>
+            );
+          }
+          return (
+            <Item
+              key={m.path}
+              icon={m.icon}
+              onClick={({ key }) => handleMenuClick(key)}
+            >
+              {m.name}
+            </Item>
+          );
+        })}
       </Menu>
     </Sider>
   );

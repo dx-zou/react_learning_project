@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
-import { useEffect, useState, useMemo, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { Card, Switch } from 'antd';
 import {
   initChartInstance,
   initLineBarOption,
   drawChartByInstance,
 } from '@/utils/echartsConf';
-import './index.less';
+import '../index.less';
 
 const chartList = [
   {
@@ -90,11 +90,11 @@ const Index = () => {
         {chartList.map(item => (
           <Card
             title={item.title}
-            style={{ width: '49%' }}
+            style={{ width: '49.5%' }}
             hoverable
             key={item.id}
           >
-            <div id={item.id} style={{ width: '100%', height: '300px' }} />
+            <div id={item.id} className='chart-box' />
           </Card>
         ))}
       </div>
