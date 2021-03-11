@@ -1,57 +1,18 @@
 /**
  * 系统菜单组件
  */
-import { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Menu, Layout } from 'antd';
 import { useNavigate } from 'react-router';
-import {
-  MailOutlined,
-  BarChartOutlined,
-  SettingOutlined,
-  PieChartOutlined,
-  AreaChartOutlined,
-} from '@ant-design/icons';
+import routerList from '../../routes/router';
 
 const { Sider } = Layout;
 const { Item, SubMenu } = Menu;
-const list = [
-  {
-    path: '/dashboard',
-    name: 'CSS',
-    icon: <MailOutlined />,
-  },
-  {
-    path: '/charts',
-    name: '图表',
-    icon: <AreaChartOutlined />,
-    children: [
-      {
-        path: '/g2plot',
-        name: 'G2Plot',
-        icon: <PieChartOutlined />,
-      },
-      {
-        path: '/echarts',
-        name: 'ECharts',
-        icon: <BarChartOutlined />,
-      },
-    ],
-  },
-  {
-    path: '/canvas',
-    name: 'canvas',
-    icon: <PieChartOutlined />,
-  },
-  {
-    path: '/drag',
-    name: '拖拽',
-    icon: <SettingOutlined />,
-  },
-];
-const MainMenu = () => {
+const MainMenu: FC = () => {
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
   const [selectedKeys, setSelectedKeys] = useState(['/dashboard'] as any);
+  const [menuList] = useState(routerList);
   const handleMenuClick = (key: string | number): void => {
     sessionStorage.setItem('selectedKey', key as string);
     navigate(key as string);
@@ -69,7 +30,7 @@ const MainMenu = () => {
       collapsed={collapsed}
       onCollapse={() => setCollapsed(c => !c)}
     >
-      <div className='logo-container'>前端火星</div>
+      <div className='logo-container'>码农火星</div>
       <Menu
         theme='dark'
         mode='inline'
@@ -77,17 +38,17 @@ const MainMenu = () => {
         selectedKeys={selectedKeys}
         style={{ height: 'calc(100vh - 109px)', overflowY: 'auto' }}
       >
-        {list.map(m => {
+        {menuList.map(m => {
           if (m.children) {
             return (
-              <SubMenu key={m.name} icon={m.icon} title={m.name}>
+              <SubMenu key={m.title} icon={m.icon} title={m.title}>
                 {m.children.map(i => (
                   <Item
                     key={i.path}
                     icon={i.icon}
                     onClick={({ key }) => handleMenuClick(key)}
                   >
-                    {i.name}
+                    {i.title}
                   </Item>
                 ))}
               </SubMenu>
@@ -99,7 +60,7 @@ const MainMenu = () => {
               icon={m.icon}
               onClick={({ key }) => handleMenuClick(key)}
             >
-              {m.name}
+              {m.title}
             </Item>
           );
         })}

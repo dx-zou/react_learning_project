@@ -17,14 +17,12 @@ const routeList: PartialRouteObject[] = [
   },
   {
     path: '',
-    element: <SwitchRoute element={<LayoutPage />} titleId='' />,
+    element: <SwitchRoute element={<LayoutPage />} />,
     children: [
       ...router,
       {
         path: '*',
-        element: (
-          <SwitchRoute element={<NotFound />} titleId='title.notFount' />
-        ),
+        element: <SwitchRoute element={<NotFound />} />,
       },
     ],
   },

@@ -1,8 +1,6 @@
 import './index.less';
-import '@/utils/test';
 
 const list = [1, 2, 3, 4, 5, 6];
-
 const Index = () => {
   return (
     <div className='flex-box'>
