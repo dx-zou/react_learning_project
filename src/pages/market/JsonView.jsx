@@ -4,17 +4,29 @@ const JsonView = () => {
   const my_json_object = {
     a: 1,
     b: 2,
-    c: '111111111111111111111111111111111111111111111113',
+    c: '11',
+    d: {
+      a: 1,
+      b: 'feeng',
+    },
   };
   return (
     <div>
       <ReactJson
         src={my_json_object}
         iconStyle='square'
-        theme='google'
+        theme='monokai'
+        name='root'
+        indentWidth={4}
+        collapsed={false}
+        quotesOnKeys
         displayDataTypes={false}
         displayObjectSize={false}
+        displayArrayKey
         collapseStringsAfterLength
+        enableClipboard={false}
+        onEdit={() => {}}
+        onAdd={() => {}}
       />
     </div>
   );

@@ -27,6 +27,9 @@ const Drag = lazy(
 const JsonView = lazy(
   () => import(/* webpackChunkName: "market'"*/ '../pages/market/JsonView')
 );
+const CodeEditor = lazy(
+  () => import(/* webpackChunkName: "market'"*/ '../pages/market/CodeEditor')
+);
 const routerList = [
   {
     path: 'dashboard',
@@ -81,6 +84,12 @@ const routerList = [
         title: 'JsonView',
         icon: <PieChartOutlined />,
         element: <SwitchRoute title='JsonView' element={<JsonView />} />,
+      },
+      {
+        path: 'market/code-editor',
+        title: 'CodeEditor',
+        icon: <PieChartOutlined />,
+        element: <SwitchRoute title='CodeEditor' element={<CodeEditor />} />,
       },
     ],
   },
