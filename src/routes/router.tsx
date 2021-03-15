@@ -6,6 +6,7 @@ import {
   PieChartOutlined,
   AreaChartOutlined,
   ShoppingOutlined,
+  BarcodeOutlined,
 } from '@ant-design/icons';
 import SwitchRoute from './SwitchRoute';
 
@@ -29,6 +30,9 @@ const JsonView = lazy(
 );
 const CodeEditor = lazy(
   () => import(/* webpackChunkName: "market'"*/ '../pages/market/CodeEditor')
+);
+const TextLoop = lazy(
+  () => import(/* webpackChunkName: "market'"*/ '../pages/market/TextLoop')
 );
 const routerList = [
   {
@@ -90,6 +94,12 @@ const routerList = [
         title: 'CodeEditor',
         icon: <PieChartOutlined />,
         element: <SwitchRoute title='CodeEditor' element={<CodeEditor />} />,
+      },
+      {
+        path: 'market/textloop',
+        title: '二维码',
+        icon: <BarcodeOutlined />,
+        element: <SwitchRoute title='TextLoop' element={<TextLoop />} />,
       },
     ],
   },
