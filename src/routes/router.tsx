@@ -34,6 +34,9 @@ const CodeEditor = lazy(
 const TextLoop = lazy(
   () => import(/* webpackChunkName: "market'"*/ '../pages/market/TextLoop')
 );
+const Document = lazy(
+  () => import(/* webpackChunkName: "market'"*/ '../pages/document/index')
+);
 const routerList = [
   {
     path: 'dashboard',
@@ -68,7 +71,7 @@ const routerList = [
   },
   {
     path: 'drag',
-    title: 'drag',
+    title: '最佳实践',
     icon: <PieChartOutlined />,
     element: <SwitchRoute title='drag' element={<Drag />} />,
   },
@@ -102,6 +105,12 @@ const routerList = [
         element: <SwitchRoute title='TextLoop' element={<TextLoop />} />,
       },
     ],
+  },
+  {
+    path: '/document',
+    title: '文档',
+    icon: <ShoppingOutlined />,
+    element: <SwitchRoute title='文档' element={<Document />} />,
   },
 ];
 

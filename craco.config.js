@@ -7,10 +7,11 @@ const WebpackBar = require('webpackbar');
 // const CircularDependencyPlugin = require('circular-dependency-plugin');
 // const pathResolve = pathUrl => path.join(__dirname, pathUrl);
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+
 module.exports = {
   webpack: {
     alias: {
-      '@': path.resolve('src'),
+      '@': path.resolve(__dirname, 'src'),
     },
     plugins: [
       // 编译进度条
