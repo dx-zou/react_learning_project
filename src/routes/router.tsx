@@ -22,8 +22,8 @@ const G2Plot = lazy(
 const Canvas = lazy(
   () => import(/* webpackChunkName: "charts'"*/ '../pages/canvas/index')
 );
-const Drag = lazy(
-  () => import(/* webpackChunkName: "market'"*/ '../pages/drag/index')
+const Test = lazy(
+  () => import(/* webpackChunkName: "market'"*/ '../pages/test/index')
 );
 const JsonView = lazy(
   () => import(/* webpackChunkName: "market'"*/ '../pages/market/JsonView')
@@ -35,7 +35,7 @@ const TextLoop = lazy(
   () => import(/* webpackChunkName: "market'"*/ '../pages/market/TextLoop')
 );
 const Document = lazy(
-  () => import(/* webpackChunkName: "market'"*/ '../pages/document/index')
+  () => import(/* webpackChunkName: "market'"*/ '../pages/document/react')
 );
 const routerList = [
   {
@@ -70,10 +70,10 @@ const routerList = [
     ],
   },
   {
-    path: 'drag',
+    path: 'test',
     title: '最佳实践',
     icon: <PieChartOutlined />,
-    element: <SwitchRoute title='drag' element={<Drag />} />,
+    element: <SwitchRoute title='最佳实践' element={<Test />} />,
   },
   {
     path: 'canvas',

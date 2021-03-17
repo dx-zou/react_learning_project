@@ -59,14 +59,14 @@ export const initLineBarOption = (data: OptionType) => {
   const {
     series = [],
     xData = [],
-    title = '',
+    // title = '',
     yName = '',
     type = 'line',
     xName = '时间',
     stack = '',
     legend = {},
     yAxis = [],
-    xInterval = 5,
+    // xInterval = 5,
     ref,
   } = data;
   const option: any = {
