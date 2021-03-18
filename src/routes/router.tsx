@@ -40,77 +40,90 @@ const Document = lazy(
 const routerList = [
   {
     path: 'dashboard',
-    title: 'css',
+    title: 'menu.dashboard',
     icon: <Html5Outlined />,
     element: (
       <SwitchRoute
-        title='css'
+        title='menu.dashboard'
         element={<Dashboard />}
-        titleId='title.dashboard'
+        titleId='menu.dashboard'
       />
     ),
   },
   {
     path: '',
-    title: '图表',
+    title: 'menu.charts',
     icon: <AreaChartOutlined />,
     children: [
       {
         path: 'chart/echarts',
-        title: 'echarts',
+        title: 'menu.charts.echarts',
         icon: <PieChartOutlined />,
-        element: <SwitchRoute title='echarts' element={<ECharts />} />,
+        element: (
+          <SwitchRoute title='menu.charts.echarts' element={<ECharts />} />
+        ),
       },
       {
         path: 'chart/g2plot',
-        title: 'g2plot',
+        title: 'menu.charts.g2plot',
         icon: <BarChartOutlined />,
-        element: <SwitchRoute title='g2plot' element={<G2Plot />} />,
+        element: (
+          <SwitchRoute title='menu.charts.g2plot' element={<G2Plot />} />
+        ),
       },
     ],
   },
   {
     path: 'test',
-    title: '最佳实践',
+    title: 'menu.bestPractice',
     icon: <PieChartOutlined />,
-    element: <SwitchRoute title='最佳实践' element={<Test />} />,
+    element: <SwitchRoute title='menu.bestPractice' element={<Test />} />,
   },
   {
     path: 'canvas',
-    title: 'canvas',
+    title: 'menu.canvas',
     icon: <RadarChartOutlined />,
-    element: <SwitchRoute title='canvas' element={<Canvas />} />,
+    element: <SwitchRoute title='menu.canvas' element={<Canvas />} />,
   },
   {
     path: '',
-    title: '组件市场',
+    title: 'menu.market',
     icon: <ShoppingOutlined />,
     children: [
       {
         path: 'market/json-view',
-        title: 'JsonView',
+        title: 'menu.market.jsonView',
         icon: <PieChartOutlined />,
-        element: <SwitchRoute title='JsonView' element={<JsonView />} />,
+        element: (
+          <SwitchRoute title='menu.market.jsonView' element={<JsonView />} />
+        ),
       },
       {
         path: 'market/code-editor',
-        title: 'CodeEditor',
+        title: 'menu.market.codeEditor',
         icon: <PieChartOutlined />,
-        element: <SwitchRoute title='CodeEditor' element={<CodeEditor />} />,
+        element: (
+          <SwitchRoute
+            title='menu.market.codeEditor'
+            element={<CodeEditor />}
+          />
+        ),
       },
       {
         path: 'market/textloop',
-        title: '二维码',
+        title: 'menu.market.others',
         icon: <BarcodeOutlined />,
-        element: <SwitchRoute title='TextLoop' element={<TextLoop />} />,
+        element: (
+          <SwitchRoute title='menu.market.others' element={<TextLoop />} />
+        ),
       },
     ],
   },
   {
     path: '/document',
-    title: '文档',
+    title: 'menu.document',
     icon: <ShoppingOutlined />,
-    element: <SwitchRoute title='文档' element={<Document />} />,
+    element: <SwitchRoute title='menu.document' element={<Document />} />,
   },
 ];
 

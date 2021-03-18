@@ -4,6 +4,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, Layout } from 'antd';
 import { useNavigate } from 'react-router';
+import { useIntl } from 'react-intl';
 import routerList from '../../routes/router';
 import { useAppDispatch } from '../../store';
 import { setBreadcrumbs } from '../../store/reducers/setting';
@@ -11,6 +12,7 @@ import { setBreadcrumbs } from '../../store/reducers/setting';
 const { Sider } = Layout;
 const { Item, SubMenu } = Menu;
 const MainMenu = () => {
+  const { formatMessage } = useIntl();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const [collapsed, setCollapsed] = useState(false);
@@ -34,7 +36,11 @@ const MainMenu = () => {
 
   // 递归渲染菜单
   const renderMenu = value => (
-    <SubMenu title={value.title} icon={value.icon} key={value.title}>
+    <SubMenu
+      title={formatMessage({ id: value.title })}
+      icon={value.icon}
+      key={value.title}
+    >
       {value.children.map(i => {
         if (i.children) {
           return <>{renderMenu(i)}</>;
@@ -45,7 +51,7 @@ const MainMenu = () => {
             icon={i.icon}
             onClick={({ key }) => handleMenuClick(key, i)}
           >
-            {i.title}
+            {formatMessage({ id: i.title })}
           </Item>
         );
       })}
@@ -58,7 +64,7 @@ const MainMenu = () => {
       collapsed={collapsed}
       onCollapse={() => setCollapsed(c => !c)}
     >
-      <div className='logo-container'>前端火星</div>
+      <div className='logo-container'>{formatMessage({ id: 'app.title' })}</div>
       <Menu
         theme='dark'
         mode='inline'
@@ -76,7 +82,7 @@ const MainMenu = () => {
               icon={m.icon}
               onClick={({ key }) => handleMenuClick(key, m)}
             >
-              {m.title}
+              {formatMessage({ id: m.title })}
             </Item>
           );
         })}

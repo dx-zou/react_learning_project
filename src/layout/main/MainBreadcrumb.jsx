@@ -1,15 +1,16 @@
 import { Breadcrumb } from 'antd';
-// import { useLocation } from 'react-router';
 import { useAppState } from '../../store';
+import { useIntl } from 'react-intl';
 const { Item } = Breadcrumb;
 
 const MainBreadcrumb = () => {
+  const { formatMessage } = useIntl();
   const { breadcrumbs } = useAppState(state => state.setting);
   return (
     <Breadcrumb style={{ margin: '16px 0' }}>
-      <Item>当前位置</Item>
+      <Item>{formatMessage({ id: 'app.breadcrumbs.location' })}</Item>
       {breadcrumbs.map(b => (
-        <Item key={b}>{b}</Item>
+        <Item key={b}>{formatMessage({ id: b })}</Item>
       ))}
     </Breadcrumb>
   );
