@@ -1,6 +1,7 @@
 const menu = {
   'app.title': '前端星球',
   'app.breadcrumbs.location': '当前位置',
+  'app.setting.user': '个人中心',
   'menu.dashboard': '首页',
   'menu.charts': '图表',
   'menu.charts.echarts': 'echarts',

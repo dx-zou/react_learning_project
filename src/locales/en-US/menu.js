@@ -1,6 +1,7 @@
 const menu = {
   'app.title': 'FE-PLANET',
   'app.breadcrumbs.location': 'location',
+  'app.setting.user': 'user center',
   'menu.dashboard': 'css',
   'menu.charts': 'Charts',
   'menu.charts.echarts': 'echarts',
