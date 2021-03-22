@@ -19,6 +19,9 @@ const ECharts = lazy(
 const G2Plot = lazy(
   () => import(/* webpackChunkName: "charts'"*/ '../pages/charts/g2plot/index')
 );
+const G6Charts = lazy(
+  () => import(/* webpackChunkName: "charts'"*/ '../pages/charts/g6/index')
+);
 const Canvas = lazy(
   () => import(/* webpackChunkName: "charts'"*/ '../pages/canvas/index')
 );
@@ -70,6 +73,12 @@ const routerList = [
         element: (
           <SwitchRoute title='menu.charts.g2plot' element={<G2Plot />} />
         ),
+      },
+      {
+        path: 'chart/g6',
+        title: 'menu.charts.g6',
+        icon: <BarChartOutlined />,
+        element: <SwitchRoute title='menu.charts.g6' element={<G6Charts />} />,
       },
     ],
   },
