@@ -1,0 +1,71 @@
+.radar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-top: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #5ef2ff;
+
+  &::before {
+    width: 100px;
+    height: 200px;
+    content: '';
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-sizing: border-box;
+    border-left: 1px solid #5ef2ff;
+  }
+
+  &::after {
+    width: 200px;
+    height: 100px;
+    content: '';
+    display: block;
+    box-sizing: border-box;
+    border-bottom: 1px solid #5ef2ff;
+  }
+
+  .fan {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid #5ef2ff;
+    box-sizing: border-box;
+
+    &::after {
+      content: '';
+      position: relative;
+      display: block;
+      width: 100px;
+      height: 100px;
+      top: -50%;
+      right: -50%;
+      transform-origin: 0 100%;
+      box-sizing: border-box;
+      border-bottom: 3px solid transparent;
+      border-image: linear-gradient(to right, transparent, #5ef2ff);
+      border-image-slice: 3;
+      background: transparent linear-gradient(to right, transparent, #9bfdfd);
+      transform: skew(-10deg);
+      animation: radarRotate 5s linear infinite;
+    }
+
+    @keyframes radarRotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+}

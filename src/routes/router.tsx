@@ -7,6 +7,7 @@ import {
   AreaChartOutlined,
   ShoppingOutlined,
   BarcodeOutlined,
+  ReadOutlined,
 } from '@ant-design/icons';
 import SwitchRoute from './SwitchRoute';
 
@@ -131,7 +132,7 @@ const routerList = [
   {
     path: '/document',
     title: 'menu.document',
-    icon: <ShoppingOutlined />,
+    icon: <ReadOutlined />,
     element: <SwitchRoute title='menu.document' element={<Document />} />,
   },
 ];

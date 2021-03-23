@@ -1,3 +1,4 @@
+import Radar from './radar';
 import './index.less';
 
 const list = [1, 2, 3, 4, 5, 6];
@@ -19,6 +20,7 @@ const Index = () => {
       <h1 className='gradient-text'>Full Stack Developer</h1>
       <div className='grid-bg' />
       <div className='dashed-border' />
+      <Radar />
     </div>
   );
 };
