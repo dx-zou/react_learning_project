@@ -13,6 +13,7 @@ const menu = {
   'menu.market.jsonView': 'JsonView',
   'menu.market.codeEditor': 'CodeEditor',
   'menu.market.others': 'Most Use',
+  'menu.market.tableform': 'TableForm',
   'menu.document': 'document',
 };
 export default menu;

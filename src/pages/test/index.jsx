@@ -20,6 +20,7 @@ const Index = () => {
     }
   };
   const [state, dispatch] = useReducer(reducer, initialState);
+  // hooks best practice
   useEffect(() => {
     const handleResize = () => {
       setWindowSize([window.innerWidth, window.innerHeight]);
@@ -41,6 +42,7 @@ const Index = () => {
     <div>
       <h1>test everything;</h1>
       <Button
+        type='primary'
         onClick={() => {
           dispatch({ type: 'increment' });
         }}

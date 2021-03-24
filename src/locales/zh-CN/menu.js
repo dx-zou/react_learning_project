@@ -13,6 +13,7 @@ const menu = {
   'menu.market.jsonView': 'JsonView',
   'menu.market.codeEditor': '编辑器',
   'menu.market.others': '常用组件',
+  'menu.market.tableform': '表格',
   'menu.document': '文档',
 };
 export default menu;

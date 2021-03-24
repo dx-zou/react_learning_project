@@ -20,7 +20,7 @@ export default function Index() {
       <MainMenu />
       <Layout>
         <MainHeader />
-        <Content style={{ padding: '0 20px' }}>
+        <Content style={{ padding: '10px' }}>
           <Suspense fallback={<SuspenseFallbackLoading />}>
             <Outlet />
           </Suspense>

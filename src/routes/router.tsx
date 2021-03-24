@@ -38,6 +38,9 @@ const CodeEditor = lazy(
 const TextLoop = lazy(
   () => import(/* webpackChunkName: "market'"*/ '../pages/market/TextLoop')
 );
+const TableForm = lazy(
+  () => import(/* webpackChunkName: "market'"*/ '../pages/market/SearchTable')
+);
 const Document = lazy(
   () => import(/* webpackChunkName: "market'"*/ '../pages/document/react')
 );
@@ -125,6 +128,14 @@ const routerList = [
         icon: <BarcodeOutlined />,
         element: (
           <SwitchRoute title='menu.market.others' element={<TextLoop />} />
+        ),
+      },
+      {
+        path: 'market/tableform',
+        title: 'menu.market.tableform',
+        icon: <BarcodeOutlined />,
+        element: (
+          <SwitchRoute title='menu.market.tableform' element={<TableForm />} />
         ),
       },
     ],
